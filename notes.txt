@@ -78,6 +78,47 @@ props,  Routes and Routing, Basic Form handling with state.
 
 
 
+// state management
+// api calls
+//response mapping
+// we don't prefer multiple states variables in a single component for better management
+// we prefer to use single state variable in a single component regarding forms
+// we can use object or array as a single state variable
+
+// let obj = {
+//     name: "Shivansh",
+//     age: 21,
+//     email: "shivansh@navgurukul.org"
+// }
+
+//  we can access the values of the object using dot notation or bracket notation
+
+// IN CONTEXT OF REACT  REACT IS AN OBJECT
+// IF you want to use useState without having to import it you can use React.useState
+
+
+//props=> properties
+
+// this is a the simulated version of useState
+// function useState(props) {
+//     return [props, function () { }]
+// }
+
+// All hooks are functions
+// useState is a hook which is used to manage the state of a component
+// useState returns an array of two elements
+// first element is the current state, second element is a function which is used to update the state
+
+
+
+// PROPS
+// props are used to pass data from parent component to child component
+// In react data flows in a unnidirectional way, parent to child
+// props are read only, we cannot modify the props in the child component
+
+// States are mutable, we can modify the state using the setState function
+// props are immutable, we cannot modify the props in the child component, in parent we can modify the props and pass it to the child component again
+
 
 
 

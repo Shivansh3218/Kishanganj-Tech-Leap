@@ -4,6 +4,8 @@ import BasicForm from "./components/BasicForm";
 import Counter from "./components/Counter";
 import Profile from "./components/Profile";
 import Header from "./components/Header";
+import AdvancedForm from "./components/AdvancedForm";
+import BasicApiCall from "./components/BasicApiCall";
 function App() {
   return (
     <>
@@ -20,6 +22,8 @@ function App() {
         <Route path="/basicForm" element={<BasicForm />} />
         <Route path="/counter" element={<Counter />} />
         <Route path="/profile" element={<Profile />} />
+        <Route path="/AdvancedForm" element={<AdvancedForm />} />
+        <Route path="/api" element = {<BasicApiCall/>}/>
       </Routes>
     </>
   );
