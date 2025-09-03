@@ -26,7 +26,7 @@ function BasicApiCall() {
 
 
 
-  useEffect(()=>{console.log("it will run after every render")})
+  useEffect(() => { console.log("it will run after every render") })
 
   return (
     <div>

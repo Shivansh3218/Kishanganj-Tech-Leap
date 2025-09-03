@@ -230,3 +230,28 @@ like we use usestate to copy the state management of the class components
     // MICROTASK QUEUE => PROMISES, MUTATION OBSERVERS.
     // MACROTASK QUEUE/ CALLBACK QUEUE=> WEB APIS LIKE SETINTERVAL, SETTIMEOUT, BROWSER APIS
     syncronous operations=> LINE BY EXECUTE, JAVASCRIPT INBUILT OR WHICH ARE WRITTEN BY US. EXAMPLES> OPERATORS, FUNCTION CALLS, LOOPS, STATEMENTS.
+
+
+  
+  // PROPS => ARE properties
+  // PROP DRILLING => IS A PROCESS TO SEND PROPS TO NESTED components
+
+   // PROP DRILLING. > when we want to send the data to the nested components so we have to passs the data through multiple components, which causes unnecessary re renders.  to resolve this issue we hava  a seperate hook which is called USECONTEXT.
+
+
+   // USECONTEXT. > it is a hook that allows us to share data between components without having to pass props down manually at every level. it creates a context object that can be accessed by any component within its provider.
+
+   data pass karna hai >> jo (components) deta dega wo provider >> jo data lega wo consumer (components). 
+
+    example > Browser router
+    
+
+
+// PROVIDER > JO DENE WALA HAI
+// create context 
+// CONSUMER > JO ACCEPT KARNE WALA HAI
+// use context 
+
+
+
+
