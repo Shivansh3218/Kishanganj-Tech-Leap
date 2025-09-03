@@ -8,7 +8,7 @@
 // onscroll = { handleScroll }  // this is an event handler
 // onchange = { handleChange }  // this is an event handler
 
-// Hooks =>> functions, that are used to copy the lifecycle methods of class components
+// Hooks =>> functions, that are used to copy the lifecycle methods of class components, state management, and other features.
 
 
 // RE RENDERING
@@ -122,3 +122,111 @@ props,  Routes and Routing, Basic Form handling with state.
 
 
 
+// lifecycle OF REACT COMPONENTS 
+1. Mounting => when the component is being created and inserted into the DOM
+2. Updating => when the component is being re-rendered due to changes in state or props
+3. Unmounting => when the component is being removed from the DOM
+
+
+//SUBPHASES OF THE STAGES   => Lifecycle methods 
+
+//componentwillmount=> phase before mounting
+----------------//componentdidmount=> phase after mounting
+//componentwillupdate=> phase before updating
+ ---------------//componentdidupdate=> phase after updating
+----------------//componentwillunmount=> phase before unmounting
+
+
+we use useEffect to copy the side effects of the class components.
+like we use usestate to copy the state management of the class components
+
+
+
+
+// useeffect. this replaces component did mount, component did update, component will unmount
+// useeffect is a hook which takes two parameters. first is a function and second is a dependency array
+
+// USE EFFECT TAKES 2 PARAMETERS
+// 1. FUNCTION
+// 2. DEPENDENCY ARRAY
+
+// component lifecycle in react
+// three phases of lifecycle
+// 1. Mounting - when the component is being inserted into the DOM
+// 2. Updating - when the component is being re-rendered as a result of changes to either its props or state
+// 3. Unmounting - when the component is being removed from the DOM
+
+//component did mount > we check if the component is mounted or not
+// component did update > we check if the component is updated or not
+// component will unmount > we check if the component is unmounted or not
+
+
+
+// component did mount => useeffect with empty dependency array
+// component did update => useeffect with dependency array having some state variable
+// component will unmount => useeffect with return function and empty dependency array
+// we use return function in useeffect to clean up the component before it is unmounted
+//by default useeffect does not return anything. if we want to return something we have to use return statement
+
+
+
+// ALL API CALLS ARE MADE IN USEEFFECT HOOK
+// WE ALWAYS DECLARE USEEFFECT AT THE TOP OF THE COMPONENT
+
+
+
+
+  // hooks are functions.  useeffect takes 2 arguments.
+  // function, dependency array.
+  // useeffect does not return anything.
+
+  // dependency array: to store the dependencies of useeffect.
+
+  // component did mount is denoted with an empty dependency array. it stores the state on which the useeffect is dependent on running. IT MEANS THAT WHEN THE COMPONENT IS MOUNTED ONLY THEN THE FUNCTON WILL RUN.
+
+  // FIRST TIME RENDER  WITH EMPTY DEPENDENCY ARRAY
+  useEffect(() => { }, [])
+
+  // component did update => i will basically store the state in the depdency array on which i want the use effect to run again and again.
+
+  // EVERY TIME WHEN THE STATE IN THE DEPENDENCY ARRAY UPDATES.
+
+  function dummy() {
+
+    // for (let i = 0; i < 1000000000; i++) {
+    //   // some dummy work
+    // }
+  }
+
+  useEffect(dummy, [userId]);
+
+  // component will unmount
+
+  useEffect(() => {
+    return () => {
+      console.log("component will unmount")
+    }
+  }, []);
+
+
+////////////////// JS EXECUTION CONTEXT ///////////////
+
+    // async await ka simple rule > await keyword will only be used inside an async function.
+    // both are keywords.
+    //keywords=> reserved words in javascript, jinko tum aisi kahi pe istemal nahi kar sakte
+    // async=> it makes a function asynchronous, yani ki wo function apne kaam ko background me chala sakta hai aur main thread ko block nahi karega.
+    // await=> it makes a function wait for a promise to resolve, yani ki wo function tab tak wait karega jab tak promise resolve nahi hota.
+
+    // execution context : where all the code is executed, an environment.
+    // call stack:  it is a stack data structure that keeps track of the execution context of the code.
+
+
+    // WEB API. SETINTERVAL=>0  console.log("1");
+    // maan lo it is PROMISE console.log("2");
+    // console.log("3");
+    
+    // 3,2,1 = > priority is always the syncronous operations  >>>>> promises or microtasks >>>>> macrotasks/callbacks 
+    //EVENT LOOP = > IT MONITORS ALL THE QUEUES AND CALL STACK.
+    // MICROTASK QUEUE => PROMISES, MUTATION OBSERVERS.
+    // MACROTASK QUEUE/ CALLBACK QUEUE=> WEB APIS LIKE SETINTERVAL, SETTIMEOUT, BROWSER APIS
+    syncronous operations=> LINE BY EXECUTE, JAVASCRIPT INBUILT OR WHICH ARE WRITTEN BY US. EXAMPLES> OPERATORS, FUNCTION CALLS, LOOPS, STATEMENTS.
